@@ -92,7 +92,7 @@ const FacialExpression = ({setSongs}) => {
   };
 
   return (
-    <div className="flex relative gap-5 items-center px-20">
+    <div className="flex relative gap-15 items-center px-20">
     <div className="flex flex-col gap-5 ">
        <h1 className="text-4xl text-white">Live Mood Detection</h1>
       <video
@@ -110,7 +110,7 @@ const FacialExpression = ({setSongs}) => {
       <div className="flex flex-col justify-center font-black font-medium items-start">
         <h1 className="text-2xl text-white mb-3 ">Live Mood Detection</h1>
         <p className="text-base text-white w-80">Your current mood is being analyzed in real-time. Enjoy music tailored to your feelings.</p>
-      <button className="text-sm text-white  bg-purple-600 rounded-2xl px-6 py-2 mt-10" onClick={handleVideoPlay}>Start Listening</button>
+      <button className="text-sm text-white  bg-purple-600 rounded-2xl px-6 py-2 mt-10" onClick={handleVideoPlay}>Detect Mood</button>
       </div>
     </div>
   );
