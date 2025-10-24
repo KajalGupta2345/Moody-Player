@@ -71,7 +71,7 @@ const FacialExpression = ({setSongs}) => {
       }
       axios.get(`http://localhost:3000/songs?mood=${_expression}`) 
       .then((response)=>{
-        console.log(response.data);
+        console.log(response.data.song);
         setSongs(response.data.song);
       });
       
@@ -92,9 +92,9 @@ const FacialExpression = ({setSongs}) => {
   };
 
   return (
-    <div className="flex relative gap-15 items-center px-20">
+    <div className="flex relative flex-col lg:flex-row md:gap-10 gap-5 items-center px-20">
     <div className="flex flex-col gap-5 ">
-       <h1 className="text-4xl text-white">Live Mood Detection</h1>
+       <h1 className="text-2xl lg:text-4xl text-white">Live Mood Detection</h1>
       <video
         autoPlay
         muted
@@ -106,11 +106,11 @@ const FacialExpression = ({setSongs}) => {
       />
     </div>
       {/* <div className="absolute z-10" ref={canvasRef}></div> */}
-      <h1 className="text-2xl absolute top-17 left-22 text-gray-700" ref={href}></h1>
-      <div className="flex flex-col justify-center font-black font-medium items-start">
-        <h1 className="text-2xl text-white mb-3 ">Live Mood Detection</h1>
-        <p className="text-base text-white w-80">Your current mood is being analyzed in real-time. Enjoy music tailored to your feelings.</p>
-      <button className="text-sm text-white  bg-purple-600 rounded-2xl px-6 py-2 mt-10" onClick={handleVideoPlay}>Detect Mood</button>
+      <h1 className="sm:text-2xl text-lg absolute top-17 left-22 text-gray-700 font-medium" ref={href}></h1>
+      <div className="flex flex-col lg:justify-center font-black font-medium lg:items-start">
+        <h1 className="hidden md:text-2xl text-white md:mb-3 ">Live Mood Detection</h1>
+        <p className="md:text-base text-sm  text-white w-80">Your current mood is being analyzed in real-time. Enjoy music tailored to your feelings.</p>
+      <button className="md:text-sm text-xs text-white  bg-purple-600 rounded-xl px-4 py-2 mt-10 hover:bg-purple-800 active:scale-105" onClick={handleVideoPlay}>Detect Mood</button>
       </div>
     </div>
   );
